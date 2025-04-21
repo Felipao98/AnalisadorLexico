@@ -1,4 +1,4 @@
-# AnalisadorLexico
+# Analisador Léxico em Python
   Este projeto é um analisador léxico simples escrito em Python, projetado para dividir uma entrada de código-fonte em tokens léxicos, como identificadores, números inteiros, operadores e pontuações básicas.
 
 # Funcionalidades
