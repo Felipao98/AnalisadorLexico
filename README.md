@@ -1,5 +1,5 @@
 # AnalisadorLexico
-
+teste
 # Atalhos
 
 # Especificações
