@@ -1,19 +1,17 @@
 import re
 
-# Definições dos padrões de tokens
 token_specification = [
-    ('NUM',     r'\d+'),                 # Número inteiro
-    ('ID',      r'[A-Za-z_]\w*'),        # Identificadores
-    ('OP',      r'[+\-*/=]'),            # Operadores
-    ('LPAREN',  r'\('),                  # Parêntese esquerdo
-    ('RPAREN',  r'\)'),                  # Parêntese direito
-    ('SEMI',    r';'),                   # Ponto e vírgula
-    ('SKIP',    r'[ \t]+'),              # Espaços/tabs
-    ('NEWLINE', r'\n'),                  # Nova linha
-    ('MISMATCH',r'.'),                   # Qualquer outro caractere (erro)
+    ('NUM',     r'\d+'),                 
+    ('ID',      r'[A-Za-z_]\w*'),        
+    ('OP',      r'[+\-*/=]'),            
+    ('LPAREN',  r'\('),                  
+    ('RPAREN',  r'\)'),                  
+    ('SEMI',    r';'),                   
+    ('SKIP',    r'[ \t]+'),              
+    ('NEWLINE', r'\n'),                  
+    ('MISMATCH',r'.'),                   
 ]
 
-# Compila o padrão regex
 token_regex = '|'.join(f'(?P<{name}>{pattern})' for name, pattern in token_specification)
 
 def lexer(code):
@@ -30,10 +28,8 @@ def lexer(code):
         tokens.append((kind, value))
     return tokens
 
-# Teste
 codigo = "x = 42 + y1 * (z2 - 3);"
 resultado = lexer(codigo)
 
-# Exibir tokens
 for token in resultado:
     print(token)
