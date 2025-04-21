@@ -1,1 +1,7 @@
 # AnalisadorLexico
+
+# Atalhos
+
+# Especificações
+
+# Limitações
