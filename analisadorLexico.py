@@ -39,7 +39,7 @@ testes = [
 ]
 
 for codigo, descricao in testes:
-    print(f"\n🧪 Teste: {descricao}")
+    print(f"\nTeste: {descricao}")
     print(f"Entrada: {codigo}")
     try:
         resultado = lexer(codigo)
