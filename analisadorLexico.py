@@ -28,8 +28,23 @@ def lexer(code):
         tokens.append((kind, value))
     return tokens
 
-codigo = "x = 42 + y1 * (z2 - 3);"
-resultado = lexer(codigo)
+testes = [
+    ("x = 42 + y1 * (z2 - 3);", "Expressão válida com identificadores e operadores"),
+    ("int x = 42 + y1 * (z2 - 3);", "Palavra-chave 'int' como identificador"),
+    ("float def = 42;", "Palavra-chave 'float' e 'def' como identificadores"),
+    ("3.14", "Número decimal (não suportado)"),
+    ("#", "Comentário inválido (erro esperado)"),
+    ("@#$%", "Caracteres especiais (erro esperado)"),
+    ("x >= 3", "Operador composto (não suportado)")
+]
 
-for token in resultado:
-    print(token)
+for codigo, descricao in testes:
+    print(f"\n🧪 Teste: {descricao}")
+    print(f"Entrada: {codigo}")
+    try:
+        resultado = lexer(codigo)
+        print("Saída (tokens):")
+        for token in resultado:
+            print("  ", token)
+    except RuntimeError as e:
+        print("Erro:", e)
